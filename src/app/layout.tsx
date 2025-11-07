@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit, Zen_Kaku_Gothic_New } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const zenKakuGothicNew = Zen_Kaku_Gothic_New({
+  variable: "--font-zen-kaku-gothic-new",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -23,11 +28,108 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-[#F5F1E8]">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${outfit.variable} ${zenKakuGothicNew.variable} antialiased bg-[#F5F1E8]`}
       >
+        <Navbar />
         {children}
+        <footer className="bg-[#E8E3D9] border-t-2 border-black">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8 py-6 lg:py-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-6">
+              {/* Logo y título */}
+              <div className="lg:col-span-1">
+                <h3 className="text-xl lg:text-2xl font-bold font-outfit text-black mb-2">
+                  LOOK BACK
+                </h3>
+                <p className="text-xs font-outfit text-black/70 mb-1">
+                  <span className="text-sm">ルックバック</span>
+                </p>
+                <p className="text-xs font-outfit text-black/60 leading-relaxed">
+                  Una historia personal de Tatsuki Fujimoto
+                </p>
+              </div>
+
+              {/* Información */}
+              <div>
+                <h4 className="text-base font-bold font-outfit text-black mb-2">
+                  INFORMACIÓN
+                </h4>
+                <ul className="space-y-1">
+                  <li className="text-xs font-outfit text-black/70">
+                    Blu-ray & DVD
+                  </li>
+                  <li className="text-xs font-outfit text-black/70">
+                    2026年1月21日(水)
+                  </li>
+                  <li className="text-xs font-outfit text-black/70">
+                    Shonen Jump+
+                  </li>
+                  <li className="text-xs font-outfit text-black/70">
+                    143 páginas
+                  </li>
+                </ul>
+              </div>
+
+              {/* Premios */}
+              <div>
+                <h4 className="text-base font-bold font-outfit text-black mb-2">
+                  PREMIOS
+                </h4>
+                <ul className="space-y-1">
+                  <li className="text-xs font-outfit text-black/70">
+                    48ª Premios de la Academia Japonesa
+                  </li>
+                  <li className="text-xs font-outfit text-black/70">
+                    Mejor Película de Animación
+                  </li>
+                  <li className="text-xs font-outfit text-black/70">
+                    Tokyo International Film Festival
+                  </li>
+                  <li className="text-xs font-outfit text-black/70">
+                    Annecy International Animation Festival
+                  </li>
+                </ul>
+              </div>
+
+              {/* Créditos */}
+              <div>
+                <h4 className="text-base font-bold font-outfit text-black mb-2">
+                  CRÉDITOS
+                </h4>
+                <ul className="space-y-1">
+                  <li className="text-xs font-outfit text-black/70">
+                    Director: Kiyotaka Oshiyama
+                  </li>
+                  <li className="text-xs font-outfit text-black/70">
+                    Música: Haruka Nakamura
+                  </li>
+                  <li className="text-xs font-outfit text-black/70">
+                    Guion: Tatsuki Fujimoto
+                  </li>
+                  <li className="text-xs font-outfit text-black/70">
+                    Estudio: Studio Durian
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Separador */}
+            <div className="border-t-2 border-black/20 my-4"></div>
+
+            {/* Copyright */}
+            <div className="flex flex-col md:flex-row justify-between items-center gap-2">
+              <p className="text-xs font-outfit text-black/60 text-center md:text-left">
+                &copy; 2025 Look Back / Tatsuki Fujimoto. Todos los derechos
+                reservados.
+              </p>
+              <p className="text-xs font-outfit text-black/50 text-center md:text-right">
+                Basado en el one-shot de{" "}
+                <span className="font-semibold">Tatsuki Fujimoto</span>
+              </p>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );
