@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Plus, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -43,8 +44,8 @@ export default function Navbar() {
     { label: "Historia", href: "#historia" },
     { label: "Película", href: "#pelicula" },
     { label: "Manga", href: "#manga" },
-    { label: "Reparto", href: "#reparto" },
-    { label: "Festivales", href: "#festivales" },
+    { label: "Merchandising", href: "/merch" },
+    { label: "Discografia", href: "#festivales" },
   ];
 
   const toggleMenu = () => {
@@ -53,7 +54,20 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed right-0 top-0 h-screen w-16 lg:w-16 bg-[#F5F1E8] border-l-2 border-black/70 z-50 hidden lg:flex flex-col items-center justify-between py-6">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-[#F5F1E8]/95 border-b-2 border-black/70 px-4 py-3 lg:hidden shadow-sm">
+        <Link href="/" className="font-outfit text-lg font-bold uppercase tracking-[0.3em] text-black">
+          Look Back
+        </Link>
+        <button
+          onClick={toggleMenu}
+          className="p-2 rounded border-2 border-black hover:bg-black/5 transition-colors"
+          aria-label="Abrir menú"
+        >
+          <Menu className="w-5 h-5 text-black" />
+        </button>
+      </nav>
+
+      <nav className="fixed right-0 top-0 h-screen w-16 bg-[#F5F1E8] border-l-2 border-black/70 z-50 hidden lg:flex flex-col items-center justify-between py-6">
         {/* Grid lines decoration - top */}
 
         {/* MENU Text with Hamburger Icon */}
@@ -141,11 +155,8 @@ export default function Navbar() {
               >
                 <nav className="flex flex-col gap-6 lg:gap-8">
                   {menuOptions.map((option, index) => (
-                    <motion.a
+                    <motion.div
                       key={index}
-                      href={option.href}
-                      onClick={toggleMenu}
-                      className="text-white font-outfit text-4xl lg:text-4xl font-bold hover:text-gray-300 transition-colors uppercase tracking-wider"
                       initial={{ opacity: 0, x: 30 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: 30 }}
@@ -156,8 +167,14 @@ export default function Navbar() {
                       }}
                       whileHover={{ x: 10 }}
                     >
-                      {option.label}
-                    </motion.a>
+                      <Link
+                        href={option.href}
+                        onClick={toggleMenu}
+                        className="text-white font-outfit text-4xl lg:text-4xl font-bold hover:text-gray-300 transition-colors uppercase tracking-wider block"
+                      >
+                        {option.label}
+                      </Link>
+                    </motion.div>
                   ))}
                 </nav>
               </motion.div>

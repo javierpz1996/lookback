@@ -35,14 +35,14 @@ export default function Home() {
   ];
 
   const cast = [
-    { name: "Fujino", role: "Voz", image: "/img/14.jpg" },
-    { name: "Kyomoto", role: "Voz", image: "/img/13.jpg" },
-    { name: "Fujino", role: "Voz", image: "/img/14.jpg" },
-    { name: "Kyomoto", role: "Voz", image: "/img/13.jpg" },
-    { name: "Fujino", role: "Voz", image: "/img/14.jpg" },
-    { name: "Kyomoto", role: "Voz", image: "/img/13.jpg" },
-    { name: "Fujino", role: "Voz", image: "/img/14.jpg" },
-    { name: "Kyomoto", role: "Voz", image: "/img/13.jpg" },
+    { name: "Kiyotaka Oshiyama", role: "Dirección", image: "/img/reparto1.jpg" },
+    { name: "Yumi Kawai", role: "Voz", image: "/img/reparto2.jpg" },
+    { name: "Tatsuki Fujimoto", role: "Historia", image: "/img/reparto3.jpg" },
+    { name: "Kazuto Izumida", role: "Cinematografia", image: "/img/reparto4.jpg" },
+    { name: "Haruka Nakamura", role: "Musica", image: "/img/reparto5.jpg" },
+    { name: "Kiyoshi Hirose", role: "Edición", image: "/img/reparto6.jpg" },
+    { name: "Eriko Kimura", role: "Sonido", image: "/img/reparto7.jpg" },
+    { name: "Mizuki Yoshida", role: "Voz", image: "/img/reparto8.jpg" },
   ];
 
   const festivals = [
@@ -54,10 +54,7 @@ export default function Home() {
       image: "/img/premio4.jpg",
     },
     { name: "Leiden International Film Festival", image: "/img/premio5.jpg" },
-    {
-      name: "Hong Kong Summer International Film Festival",
-      image: "/img/premio6.jpg",
-    },
+
   ];
 
   const processImages = [
@@ -71,12 +68,12 @@ export default function Home() {
 
   return (
     <div>
-      <div className="min-h-screen flex flex-col lg:flex-row">
+      <div className="min-h-screen flex flex-col gap-12 lg:gap-0 lg:flex-row">
         {/* Primera columna */}
         <div className="w-full lg:w-[35%] bg-[#F5F1E8] relative flex flex-col min-h-[50vh] lg:min-h-screen lg:sticky lg:top-0 lg:h-screen gap-11">
           {/* Top Image */}
           <motion.div
-            className="mt-10"
+            className="mt-25 md:mt-12 lg:mt-16"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -84,9 +81,9 @@ export default function Home() {
             <Image
               src="/img/7.jpg"
               alt="Character"
-              width={400}
-              height={400}
-              className="object-cover lg:w-[315px] lg:h-[140px] border-3 border-black"
+              width={300}
+              height={300}
+              className="object-cover md:w-[215px] md:h-[140px] lg:w-[315px] lg:h-[140px] border-3 border-black"
             />
           </motion.div>
 
@@ -102,13 +99,13 @@ export default function Home() {
               alt="Look Back Logo"
               width={1000}
               height={1000}
-              className="mx-auto w-[510px]"
+              className="mx-auto w-[300px] sm:w-[440px] md:w-[480px] lg:w-[360px]"
             />
           </motion.div>
 
           <div className="flex justify-center">
             <div className="text-center text-black w-[680px]">
-              <h2 className="text-2xl font-thin text-center font-outfit">
+              <h2 className="text-md md:text-2xl font-thin text-center font-outfit">
                 "48ª edición de los Premios de la Academia Japonesa. ¡Ganador
                 del premio a la Mejor Película de Animación!"
               </h2>
@@ -117,22 +114,22 @@ export default function Home() {
 
           {/* Blu-ray Button */}
           <div className="flex justify-center">
-            <div className="w-[380px] border-3 border-black bg-[#D8B76B] text-white px-4 py-2 lg:px-6 lg:py-3 rounded-full flex items-center justify-center gap-2 hover:bg-[#5A6B4A] transition-colors cursor-pointer text-xs lg:text-sm text-center">
+            <div className="w-[380px]  border-3 border-black bg-[#D8B76B] text-white px-4 py-2 lg:px-6 lg:py-3 rounded-full flex items-center justify-center gap-2 hover:bg-[#5A6B4A] transition-colors cursor-pointer text-xs lg:text-sm text-center">
               <span className="text-center font-bold font-outfit text-xl text-black">
                 2026年1月21日(水) <br /> Blu-ray&DVD発売決定!
               </span>
             </div>
           </div>
 
-          <div className="flex justify-start ml-6 mt-auto mb-10">
-            <Blockquote className="text-black font-outfit border-l-2 border-black pl-6 italic max-w-[210px]">
+          <div className="flex justify-center lg:justify-start lg:ml-6 mt-auto mb-10 px-4">
+            <Blockquote className="text-black font-outfit border-l-2 border-black pl-6 italic w-full max-w-[320px] lg:max-w-[210px]">
               "i thought i would never see the day when my work will come to
               life with such sincerity"
             </Blockquote>
           </div>
 
           <motion.div
-            className="absolute bottom-15 lg:bottom-4 right-45"
+            className="hidden lg:block absolute bottom-15 lg:bottom-4 right-45"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
@@ -143,12 +140,12 @@ export default function Home() {
               alt="Character"
               width={200}
               height={200}
-              className="object-cover lg:w-[200px] lg:h-[130px] border-3 border-black"
+              className="object-cover w-[200px] h-[130px] border-3 border-black"
             ></Image>
           </motion.div>
 
           <motion.div
-            className="absolute bottom-20 lg:bottom-8 right-4"
+            className="hidden lg:block absolute bottom-20 lg:bottom-8 right-4"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
@@ -159,7 +156,7 @@ export default function Home() {
               alt="Manga Pages"
               width={220}
               height={200}
-              className="object-cover lg:w-[230px] lg:h-[140px] border-3 border-black"
+              className="object-cover w-[230px] h-[140px] border-3 border-black"
             ></Image>
           </motion.div>
         </div>
@@ -221,23 +218,26 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-bold font-outfit mb-8 text-black">
               UNA HISTORIA PERSONAL DE FUJIMOTO TATSUKI
             </h2>
-            <p className="text-lg font-outfit text-black">
-              En mi opinión, “Look Back” es una historia profundamente personal
-              y emocional de Tatsuki Fujimoto, que se aleja del caos violento y
-              absurdo de Chainsaw Man para mostrarnos su lado más humano, íntimo
-              y reflexivo. Es un relato sobre la pasión creativa, la soledad, la
-              amistad y la pérdida, contado con una sensibilidad que deja una
-              marca incluso después de terminarla. Más que un simple homenaje al
-              arte del manga, parece una autobiografía emocional de Fujimoto,
-              donde expresa sus inseguridades como artista y la culpa o el miedo
-              de perder aquello que lo inspira a seguir creando. La relación
-              entre Fujino y Kyomoto simboliza perfectamente el contraste entre
-              la competitividad y la admiración, y cómo el arte puede conectar
-              —y también aislar— a las personas. Visualmente, el corto logra
-              traducir esa atmósfera melancólica y contemplativa del manga, con
-              una dirección que respeta los silencios y los gestos pequeños,
-              esos momentos que dicen más que las palabras.
-            </p>
+            <div className="w-[360px] md:w-[320px] lg:w-[980px] mx-auto">
+              <p className="text-lg font-outfit text-black">
+                En mi opinión, “Look Back” es una historia profundamente
+                personal y emocional de Tatsuki Fujimoto, que se aleja del caos
+                violento y absurdo de Chainsaw Man para mostrarnos su lado más
+                humano, íntimo y reflexivo. Es un relato sobre la pasión
+                creativa, la soledad, la amistad y la pérdida, contado con una
+                sensibilidad que deja una marca incluso después de terminarla.
+                Más que un simple homenaje al arte del manga, parece una
+                autobiografía emocional de Fujimoto, donde expresa sus
+                inseguridades como artista y la culpa o el miedo de perder
+                aquello que lo inspira a seguir creando. La relación entre
+                Fujino y Kyomoto simboliza perfectamente el contraste entre la
+                competitividad y la admiración, y cómo el arte puede conectar —y
+                también aislar— a las personas. Visualmente, el corto logra
+                traducir esa atmósfera melancólica y contemplativa del manga,
+                con una dirección que respeta los silencios y los gestos
+                pequeños, esos momentos que dicen más que las palabras.
+              </p>
+            </div>
           </div>
           <div className="max-w-6xl mx-auto pt-10">
             <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-12 lg:gap-16 px-4">
@@ -292,7 +292,7 @@ export default function Home() {
                     className="object-cover border-4 border-black w-full h-full "
                   />
                 </motion.div>
-                <p className="mt-2 text-center lg:text-right font-outfit text-black text-base lg:text-md">
+                <p className="mt-2 text-start  lg:text-right font-outfit text-black text-base lg:text-md">
                   Ayumu Fujino (藤野 キョウ Fujino Kyō)
                 </p>
               </motion.div>
@@ -475,22 +475,26 @@ export default function Home() {
               <h2 className="text-4xl lg:text-5xl font-bold font-outfit mb-8 text-black">
                 MANGA
               </h2>
-              <p className="text-lg font-outfit text-black">
-                Look Back es un one-shot (historia autoconclusiva) escrito y
-                dibujado por Tatsuki Fujimoto, publicado el 19 de julio de 2021
-                en la plataforma Shonen Jump+. No pertenece a una serie ni tiene
-                tomos adicionales: es una única historia de 143 páginas, pensada
-                para leerse de principio a fin en una sola sesión. Fujimoto
-                escribió y dibujó Look Back prácticamente en solitario, y muchos
-                lectores lo consideran su trabajo más personal y emocionalmente
-                sincero. Después del éxito de Chainsaw Man, decidió hacer una
-                pausa de la acción y el caos que lo caracterizan, para crear una
-                obra íntima, silenciosa y humana. El título, Look Back, juega
-                con la idea de “mirar atrás”: una metáfora sobre la memoria, la
-                culpa y el crecimiento personal. En entrevistas, Fujimoto
-                explicó que quería reflejar la sensación de mirar al pasado y
-                sentir tanto orgullo como arrepentimiento.
-              </p>
+
+              <div className="w-[360px] md:w-[320px] lg:w-[980px] mx-auto">
+                <p className="text-lg font-outfit text-black">
+                  Look Back es un one-shot (historia autoconclusiva) escrito y
+                  dibujado por Tatsuki Fujimoto, publicado el 19 de julio de
+                  2021 en la plataforma Shonen Jump+. No pertenece a una serie
+                  ni tiene tomos adicionales: es una única historia de 143
+                  páginas, pensada para leerse de principio a fin en una sola
+                  sesión. Fujimoto escribió y dibujó Look Back prácticamente en
+                  solitario, y muchos lectores lo consideran su trabajo más
+                  personal y emocionalmente sincero. Después del éxito de
+                  Chainsaw Man, decidió hacer una pausa de la acción y el caos
+                  que lo caracterizan, para crear una obra íntima, silenciosa y
+                  humana. El título, Look Back, juega con la idea de “mirar
+                  atrás”: una metáfora sobre la memoria, la culpa y el
+                  crecimiento personal. En entrevistas, Fujimoto explicó que
+                  quería reflejar la sensación de mirar al pasado y sentir tanto
+                  orgullo como arrepentimiento.
+                </p>
+              </div>
             </div>
             <div className="max-w-6xl mx-auto pt-10">
               <div className="flex flex-col lg:flex-row items-start justify-center gap-12 lg:gap-16 px-4">
@@ -530,7 +534,7 @@ export default function Home() {
                       loop: true,
                     }}
                   >
-                    <CarouselContent className="-mt-4 h-[600px] lg:h-[700px]">
+                    <CarouselContent className="-mt-4 h[600px] lg:h-[700px]">
                       {processImages.map((image, index) => (
                         <CarouselItem
                           key={index}
